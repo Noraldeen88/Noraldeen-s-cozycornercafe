@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cozy Corner Café menu with prices for drinks and pastries.">
+  <title>Cozy Corner Café - Menu</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="images/coffee.jpg">
+</head>
+<body class="menu">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="banner" role="img" aria-label="Cafe sign and lantern lights">
+      <div class="banner-inner">
+        <h1>Our Menu</h1>
+        <p>Fresh. Simple. Fair prices.</p>
+      </div>
+    </div>
+    <nav aria-label="Primary">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" aria-current="page">Menu</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="menu-intro">
+      <h2>Drinks and Bakes</h2>
+      <p>Ask about non dairy milk. We have oat and almond.</p>
+    </section>
+
+    <section class="menu-table" aria-label="Price list">
+      <table>
+        <caption class="visually-hidden">Cozy Corner Café prices</caption>
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Espresso</td><td>Single shot</td><td>$2.50</td></tr>
+          <tr><td>Americano</td><td>Espresso with hot water</td><td>$3.00</td></tr>
+          <tr><td>Cappuccino</td><td>Steamed milk and foam</td><td>$3.50</td></tr>
+          <tr><td>Latte</td><td>Milk with light foam</td><td>$3.75</td></tr>
+          <tr><td>Cold Brew</td><td>12 hour steep</td><td>$3.95</td></tr>
+          <tr><td>Herbal Tea</td><td>Mint or chamomile</td><td>$2.50</td></tr>
+          <tr><td>Muffin</td><td>Blueberry or chocolate chip</td><td>$2.00</td></tr>
+          <tr><td>Croissant</td><td>Buttery and flaky</td><td>$2.75</td></tr>
+          <tr><td>Breakfast Sandwich</td><td>Egg and cheddar</td><td>$5.50</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="features" aria-label="Atmosphere">
+      <article class="feature">
+        <img src="images/lanterns.jpg" alt="String of paper lanterns over a crowd">
+        <h3>Evening Vibe</h3>
+        <p>Soft lights on Fridays after five.</p>
+      </article>
+      <article class="feature">
+        <img src="images/interior.jpg" alt="Counter with pastry case">
+        <h3>Fresh Case</h3>
+        <p>Small batches through the day.</p>
+      </article>
+    </section>
+
+    <section class="specials">
+      <h2>Daily Special</h2>
+      <p>Muffin and drip coffee combo before 10 AM for $4.50.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="copyright">© 2025 Cozy Corner Café..</p>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

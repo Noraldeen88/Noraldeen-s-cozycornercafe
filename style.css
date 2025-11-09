@@ -1,0 +1,213 @@
+/* Color system */
+:root {
+  --bg: #f8f4ef;
+  --text: #333333;
+  --brand: #6b4f4f;
+  --brand-2: #8c6e63;
+  --surface: #ffffff;
+}
+
+/* Base */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  background: var(--brand);
+  color: #fff;
+}
+
+/* Banners per page */
+.home .banner { background-image: url('../images/banner.jpg'); }
+.menu .banner { background-image: url('../images/lanterns.jpg'); }
+
+/* Header and banner */
+header { text-align: center; }
+.banner {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.banner-inner {
+  background-color: rgba(0,0,0,0.45);
+  padding: 16px 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(1px);
+}
+.banner h1 { margin: 0 0 6px 0; font-size: 2.2rem; }
+.banner p { margin: 0; font-size: 1rem; }
+
+/* Navigation */
+nav { background: var(--brand); }
+.nav-toggle {
+  display: none;
+  border: 0;
+  padding: 14px 16px;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 12px;
+  display: block;
+  position: relative;
+}
+nav a:after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 8px;
+  height: 2px;
+  transform: scaleX(0);
+  background: var(--brand-2);
+  transition: transform 200ms ease;
+}
+nav a:hover:after,
+nav a[aria-current="page"]:after { transform: scaleX(1); }
+
+/* Sections */
+.intro, .menu-intro, .specials {
+  text-align: center;
+  padding: 32px 16px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.feature {
+  flex: 1 1 300px;
+  text-align: center;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.feature:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+.feature img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+/* Menu Table */
+table {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: var(--surface);
+  border: 0;
+}
+caption { padding: 8px; }
+th, td {
+  text-align: left;
+  padding: 12px;
+  border: 0;
+}
+th {
+  background-color: var(--brand);
+  color: white;
+  position: sticky;
+  top: 0;
+}
+tr:nth-child(even) { background-color: #f2f2f2; }
+
+/* Footer */
+footer {
+  margin-top: 24px;
+  background-color: var(--brand);
+  color: white;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  padding: 20px;
+}
+footer h4 { margin: 0 0 6px 0; }
+footer p, address { margin: 0 0 6px 0; }
+.copyright { text-align: center; margin: 0; padding: 12px 0; }
+
+/* Utilities */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Responsive navigation */
+@media (max-width: 760px) {
+  .nav-toggle { display: inline-block; }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+  nav ul.open { display: flex; }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  table { width: 96%; }
+}
+
+
+/* Banner text refinements */
+.banner .byline { 
+  margin: 4px 0 0 0; 
+  font-size: 1rem; 
+  opacity: 0.95; 
+}
+.banner .tagline { 
+  margin: 6px 0 0 0; 
+  font-size: 0.95rem; 
+  opacity: 0.9; 
+}

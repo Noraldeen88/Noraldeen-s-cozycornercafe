@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cozy Corner Café. Fresh coffee, pastries, and a relaxing space.">
+  <title>Cozy Corner Café - Home</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="images/coffee.jpg">
+</head>
+<body class="home">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="banner" role="img" aria-label="Warm café table with coffee and pastry">
+      <div class="banner-inner">
+        <h1>Cozy Corner Café</h1>
+        <p class="byline">by Noraldeen</p>
+        <p class="tagline">Good coffee. Calm space.</p>
+      </div>
+    </div>
+    <nav aria-label="Primary">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="intro">
+      <h2>Welcome</h2>
+      <p>Grab a seat. Read a page. Meet a friend. We keep it simple and warm.</p>
+    </section>
+
+    <section class="features" aria-label="Highlights">
+      <article class="feature">
+        <img src="images/coffee.jpg" alt="Latte art in a cup">
+        <h3>Freshly Brewed</h3>
+        <p>Beans roasted nearby and brewed to order.</p>
+      </article>
+      <article class="feature">
+        <img src="images/pastry.jpg" alt="Croissant on a plate">
+        <h3>Morning Bakes</h3>
+        <p>Batch baked at sunrise for peak flavor.</p>
+      </article>
+      <article class="feature">
+        <img src="images/chalkboard.jpg" alt="Cafe chalkboard menu and espresso machine">
+        <h3>Barista Bar</h3>
+        <p>Manual and machine methods. Ask for a pour over.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <section class="footer-grid" aria-label="Contact and hours">
+      <div>
+        <h4>Hours</h4>
+        <p>Mon Fri 7:00 AM 6:00 PM</p>
+        <p>Sat Sun 8:00 AM 4:00 PM</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <address>
+          123 Brew St, Townsville<br>
+          Cozy123@gmail.com
+        </address>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <p>Instagram, Facebook, TikTok</p>
+      </div>
+    </section>
+    <p class="copyright">© 2025 Cozy Corner Café..</p>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
